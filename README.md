@@ -10,11 +10,9 @@
 
 下記のファイルを自分のＰＣの任意の場所に格納してください。
 
----
-Anclock.java
-Anclock.mf
-Anp.jpg
----
+ Anclock.java  
+ Anclock.mf  
+ Anp.jpg  
 
 コマンドプロンプトから
 ファイルを格納した場所まで移動して
