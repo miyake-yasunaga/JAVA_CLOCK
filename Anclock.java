@@ -5,32 +5,32 @@ import java.util.*;
 
 public class Anclock extends Frame {
 
-  //DispƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‰»
+  //Dispã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–
   Disp disp_0 = new Disp();
 
  public static void main(String args[]) {
-  //AncloAppƒNƒ‰ƒX‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‰»
+  //AncloAppã‚¯ãƒ©ã‚¹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–
   new Anclock();
  }
 
-//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
  public Anclock() {
    super("Anclock");
-// ‰æ–Êã‚ÌƒEƒCƒ“ƒhƒE•\¦ˆÊ’u
+// ç”»é¢ä¸Šã®ã‚¦ã‚¤ãƒ³ãƒ‰ã‚¦è¡¨ç¤ºä½ç½®
    setLocation(100,100);
-// ƒEƒBƒ“ƒhƒE‚ÌƒTƒCƒY‚ğw’è
+// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®ã‚µã‚¤ã‚ºã‚’æŒ‡å®š
    setSize(100,150);
 
-//ƒLƒƒƒ“ƒoƒX‚ÌƒTƒCƒY
+//ã‚­ãƒ£ãƒ³ãƒã‚¹ã®ã‚µã‚¤ã‚º
    disp_0.setSize(100,150);
-//ƒLƒƒƒ“ƒoƒX‚ğƒtƒŒ[ƒ€‚É’Ç‰Á
+//ã‚­ãƒ£ãƒ³ãƒã‚¹ã‚’ãƒ•ãƒ¬ãƒ¼ãƒ ã«è¿½åŠ 
    add(disp_0);
 
-// ƒEƒBƒ“ƒhƒE‚ğ•Â‚¶‚½‚ÉI—¹‚·‚é‚æ‚¤‚Éİ’è
+// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’é–‰ã˜ãŸæ™‚ã«çµ‚äº†ã™ã‚‹ã‚ˆã†ã«è¨­å®š
   addWindowListener(new WindowAdapter() {
    public void windowClosing(WindowEvent e) {System.exit(0);}
   });
-// ƒEƒBƒ“ƒhƒE‚ğ•\¦
+// ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚’è¡¨ç¤º
   setVisible(true);
  }
 }
@@ -50,7 +50,7 @@ class Disp extends Canvas implements Runnable {
  MediaTracker mt;
  Thread th;
 
-//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+//ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
   public Disp() {
     gcal = new GregorianCalendar();
     mt = new MediaTracker(this);
@@ -94,25 +94,25 @@ class Disp extends Canvas implements Runnable {
    offscr_g = offscr_img.getGraphics();
    offscr_g.drawImage(clock_img,0,0,this);
 
-   //‚Í‚è
+   //ã¯ã‚Š
    for (int dsp = 0; dsp < 20; dsp++){
      offscr_g.setColor(new Color(0,255,127));
-     //’Zj‚Ì•`‰æ(‰¡•6,c•6‚Ì—ÎF‚Å“h‚è‚Â‚Ô‚³‚ê‚½‰~Œ`‚Ì}Œ`‚ğ•`‚­)
+     //çŸ­é‡ã®æç”»(æ¨ªå¹…6,ç¸¦å¹…6ã®ç·‘è‰²ã§å¡—ã‚Šã¤ã¶ã•ã‚ŒãŸå††å½¢ã®å›³å½¢ã‚’æã)
      offscr_g.fillOval(cx+(int)(dsp*Math.cos(hangle*rd)),cy-(int)(dsp*Math.sin(hangle*rd)),6,6);
    }
    for (int dsp = 0; dsp < 25; dsp++){
      offscr_g.setColor(new Color(255,127,255));
-     //’·j‚Ì•`‰æ(‰¡•4,c•4‚Ì“F‚Å“h‚è‚Â‚Ô‚³‚ê‚½‰~Œ`‚Ì}Œ`‚ğ•`‚­)
+     //é•·é‡ã®æç”»(æ¨ªå¹…4,ç¸¦å¹…4ã®æ¡ƒè‰²ã§å¡—ã‚Šã¤ã¶ã•ã‚ŒãŸå††å½¢ã®å›³å½¢ã‚’æã)
      offscr_g.fillOval(cx+(int)(dsp*Math.cos(mangle*rd)),cy-(int)(dsp*Math.sin(mangle*rd)),4,4);
    }
    for (int dsp = 0; dsp < 30; dsp++){
      offscr_g.setColor(new Color(255,0,0));
-     //•bj‚Ì•`‰æ(‰¡•4,c•4‚ÌÔF‚Å“h‚è‚Â‚Ô‚³‚ê‚½‰~Œ`‚Ì}Œ`‚ğ•`‚­)
+     //ç§’é‡ã®æç”»(æ¨ªå¹…4,ç¸¦å¹…4ã®èµ¤è‰²ã§å¡—ã‚Šã¤ã¶ã•ã‚ŒãŸå††å½¢ã®å›³å½¢ã‚’æã)
      offscr_g.fillOval(cx+(int)(dsp*Math.cos(sangle*rd)),cy-(int)(dsp*Math.sin(sangle*rd)),2,2);
    }
-   //‚Í‚È
+   //ã¯ãª
    offscr_g.fillOval(40,32,14,10);
-   //‚Ä‚©‚è
+   //ã¦ã‹ã‚Š
    offscr_g.setColor(new Color(255,255,255));
    offscr_g.fillOval(43,34,3,2);
    g.drawImage(offscr_img, 0, 0, this);
